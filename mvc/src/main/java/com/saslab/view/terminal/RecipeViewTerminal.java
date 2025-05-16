@@ -1,8 +1,9 @@
-package com.saslab.view;
+package com.saslab.view.terminal;
 
 import com.saslab.model.Recipe;
+import com.saslab.view.interfaces.RecipeView;
 
-public class RecipeView {    
+public class RecipeViewTerminal implements RecipeView {    
     public void displayRecipe(Recipe r) {
         System.out.println("Ricetta:" + r.getName());
 

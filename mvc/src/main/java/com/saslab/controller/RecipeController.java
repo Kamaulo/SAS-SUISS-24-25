@@ -1,7 +1,7 @@
 package com.saslab.controller;
 
 import com.saslab.model.Recipe;
-import com.saslab.viewfx.RecipeView;
+import com.saslab.view.interfaces.RecipeView;
 
 
 public class RecipeController {
@@ -11,10 +11,16 @@ public class RecipeController {
     public RecipeController(Recipe recipeModel, RecipeView recipeView) {
         this.recipeModel = recipeModel;
         this.recipeView = recipeView;
+        
+        // TODO: ristrutturare il codice in modo che il setOnActio
+        // non avvenga all'interno del controller
+        // Soluzione 1: assegnare handler dal main 
+        // Soluzione 2: definire un interface per il controller
+        // e avere due implementazioni (una per terminal e una per JavaFX)
 
-        this.recipeView.buttonUpdate.setOnAction(e -> {
+        /*this.recipeView.buttonUpdate.setOnAction(e -> {
             this.updateName("Carbonara con carbocrema");
-        });
+        });*/
 
         this.updateView();
     }

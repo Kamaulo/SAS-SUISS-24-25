@@ -5,7 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import com.saslab.model.Recipe;
-import com.saslab.viewfx.RecipeView;
+import com.saslab.view.fx.RecipeViewFX;
+import com.saslab.view.terminal.RecipeViewTerminal;
 
 import java.io.IOException;
 
@@ -20,9 +21,9 @@ public class Main extends Application {
             20*62
         );
         
-        RecipeController controller = new RecipeController(recipe, new RecipeView());
+        RecipeController controller = new RecipeController(recipe, new RecipeViewFX());
 
-        Scene scene = new Scene(controller.getView(), 300, 200);
+        Scene scene = new Scene((RecipeViewFX)controller.getView(), 300, 200);
         stage.setScene(scene);
         stage.setTitle("Recipe View");
         stage.show();
